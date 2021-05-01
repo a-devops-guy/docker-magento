@@ -1,4 +1,4 @@
-FROM php:7.3.27-cli-alpine3.13
+FROM php:7.4-cli-alpine3.13
 
 ENV INSTALL_SAMPLE_DATA true
 
@@ -6,13 +6,13 @@ RUN apk update && apk upgrade
 RUN apk add busybox-extras
 
 RUN apk add zlib-dev libpng-dev libjpeg-turbo-dev freetype-dev libxml2-dev curl-dev libxslt-dev libzip-dev icu-dev oniguruma-dev \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/lib --with-png-dir=/usr/lib --with-jpeg-dir=/usr/lib \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd
 
-RUN docker-php-ext-install bcmath curl ctype dom iconv intl mbstring pdo_mysql simplexml soap xsl zip sockets opcache hash 
+RUN docker-php-ext-install bcmath curl ctype dom iconv intl mbstring pdo_mysql simplexml soap xsl zip sockets opcache 
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \ 
-   php composer-setup.php --install-dir=/bin/ --filename=composer --version=1.10.22 && \
+   php composer-setup.php --install-dir=/bin/ --filename=composer && \
    php -r "unlink('composer-setup.php');"
 
 COPY entrypoint.sh /bin/entrypoint.sh

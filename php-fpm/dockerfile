@@ -1,11 +1,11 @@
-FROM php:7.3.27-fpm-alpine3.13
+FROM php:7.4-fpm-alpine3.13
 
 RUN apk update && apk upgrade
 RUN apk add zlib-dev libpng-dev libjpeg-turbo-dev freetype-dev libxml2-dev curl-dev libxslt-dev libzip-dev icu-dev oniguruma-dev \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/lib --with-png-dir=/usr/lib --with-jpeg-dir=/usr/lib \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd
 
-RUN docker-php-ext-install bcmath curl ctype dom iconv intl mbstring pdo_mysql simplexml soap xsl zip sockets opcache hash 
+RUN docker-php-ext-install bcmath curl ctype dom iconv intl mbstring pdo_mysql simplexml soap xsl zip sockets opcache
 
 WORKDIR /var/www/html/ 
 

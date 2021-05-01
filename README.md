@@ -1,4 +1,4 @@
-## Magento 2.3 Docker
+## Magento 2.4 Docker
 
 This is a docker compose project for magento 2 dev environment with all services like redis, varnish, ES, cron etc
 
@@ -9,7 +9,7 @@ This is a docker compose project for magento 2 dev environment with all services
 4. Add entry to locahost with DNS www.magento-dev.com
 5. run docker compose
 
-### This will set up the end to end magento 2.3 service for development. Later you can git pull change to magento folder located under /var/www/html/magento
+### This will set up the end to end magento 2.4 service for development. Later you can git pull your code to magento folder located under /var/www/html/magento
 
 ### Default Credentials for services
 1. Magento Backend - http://www.magento-dev.com/admin - magento:Magento@123
@@ -18,7 +18,5 @@ This is a docker compose project for magento 2 dev environment with all services
 4. ES - hostname(ES) - No Credentila
 5. RabbitMq: - Hostname(rmq) - guest:guest
 
-### Note: to use ES service you have to log into backend to use the service. As magento 2.3 doesnt include cli to use ES7 service
-
-### refer branch mage2.4 to use magento 2.4 service
+### refer branch master to use magento 2.3 service
 ### most of the variables are hardcoded. As this is for test env. raise an issue if anything. 
