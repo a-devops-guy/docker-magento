@@ -18,7 +18,7 @@ This is a docker compose project for magento 2 dev environment with all services
 4. ES - hostname(ES) - No Credentila
 5. RabbitMq: - Hostname(rmq) - guest:guest
 
-# Note: to use ES service you have to log into backend to use the service. As magento 2.3 doesnt include cli to use ES7 service
+### Note: to use ES service you have to log into backend to use the service. As magento 2.3 doesnt include cli to use ES7 service
 
-# refer branch mage2.4 to use magento 2.4 service
-# most of the variables are hardcoded. As this is for test env. raise an issue if anything. 
+### refer branch mage2.4 to use magento 2.4 service
+### most of the variables are hardcoded. As this is for test env. raise an issue if anything. 
