@@ -1,4 +1,4 @@
-# Magento 2.3 Docker Container
+# Magento 2.3 Docker
 
 This is a docker compose project for magento 2 dev environment with all services like redis, varnish, ES, cron etc
 
